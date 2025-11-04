@@ -1,5 +1,5 @@
 import { ChevronRight } from "lucide-react";
-import BannerLogo from "../assets/banner-logo.svg";
+import BannerLogo from "../assets/Banner-logo.svg";
 
 function Banner() {
   return (
