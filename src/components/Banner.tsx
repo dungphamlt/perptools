@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import BannerLogo from "../assets/images/banner-logo.svg";
+import BannerLogo from "../assets/images/Banner-logo.svg";
 
 function Banner() {
   const containerVariants = {
