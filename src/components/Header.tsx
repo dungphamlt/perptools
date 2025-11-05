@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../assets/logo.svg?react";
+import Logo from "../assets/icons/logo.svg?react";
 import { Link } from "react-router-dom";
 import { ChevronRight, Menu, X } from "lucide-react";
 
@@ -8,24 +8,20 @@ function Header() {
 
   const navItems = [
     {
-      label: "Stats",
-      href: "/stats",
+      label: "NFT Sale",
+      href: "/nft-sale",
     },
     {
-      label: "Products",
-      href: "/products",
+      label: "AI Agent",
+      href: "/ai-agent",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Roadmap",
+      href: "/roadmap",
     },
     {
-      label: "Community",
-      href: "/community",
-    },
-    {
-      label: "Ecosystem",
-      href: "/ecosystem",
+      label: "Social",
+      href: "/social",
     },
   ];
 
@@ -35,7 +31,7 @@ function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Logo className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            <Logo className="w-8 h-8 md:w-12 md:h-12" />
             <h1 className="text-xl md:text-2xl font-bold text-white">
               PerpTools
             </h1>
@@ -54,9 +50,9 @@ function Header() {
 
           {/* Desktop Launch App Button */}
           <div className="hidden md:flex items-center gap-2">
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium hover:bg-primary transition-colors cursor-pointer">
+            <button className="flex items-center gap-1 px-4 py-2 rounded-lg bg-gradient-to-b from-[#2BB9F3] to-[#83D4FB] text-black font-medium hover:bg-gradient-to-b hover:from-primary hover:to-primary transition-all duration-300 cursor-pointer hover:scale-105">
               <span>Launch App</span>
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
 

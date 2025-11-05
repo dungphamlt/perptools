@@ -1,10 +1,10 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import BinanceSquareIcon from "../assets/binance-square.svg?react";
-import BitcoinnistIcon from "../assets/bitcoinist.svg?react";
-import TheBlockIcon from "../assets/the-block.svg?react";
-import YahooFinanceIcon from "../assets/yahoo-finance.svg?react";
+import BinanceSquareIcon from "../assets/images/binance-square.svg?react";
+import BitcoinnistIcon from "../assets/images/bitcoinist.svg?react";
+import TheBlockIcon from "../assets/images/the-block.svg?react";
+import YahooFinanceIcon from "../assets/images/yahoo-finance.svg?react";
 
 function PartnersSlider() {
   const partners = [

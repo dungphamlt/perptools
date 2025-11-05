@@ -39,15 +39,8 @@ body {
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Dotted pattern background */
-.dotted-pattern {
-  background-image: radial-gradient(
-    circle,
-    rgba(100, 214, 255, 0.15) 1px,
-    transparent 1px
-  );
-  background-size: 24px 24px;
-  background-position: 0 0;
+button {
+  cursor: pointer;
 }
 
 /* Background gradient - primary 30% ở 2 góc, black 100% ở giữa */
@@ -138,4 +131,107 @@ body {
   border-radius: calc(1rem - 2px);
   width: 100%;
   height: 100%;
+}
+
+/* Content layer background với radial gradients màu primary */
+.content-layer-bg {
+  position: relative;
+  background: radial-gradient(at -16% 10%, #009dff 3%, transparent 16%),
+    radial-gradient(ellipse at 50% 243%, #009dff 13%, transparent 53%);
+  overflow: hidden;
+}
+
+/* Light streaks - các vệt sáng phản chiếu */
+.content-layer-bg::before,
+.content-layer-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Vệt sáng chính - từ trên trái xuống dưới phải */
+.content-layer-bg::before {
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 30%,
+    rgba(0, 157, 255, 0.15) 45%,
+    rgba(0, 157, 255, 0.3) 50%,
+    rgba(0, 157, 255, 0.15) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  background-position: 25% 25%;
+  opacity: 0.8;
+}
+
+/* Vệt sáng phụ - từ trên phải xuống dưới trái */
+.content-layer-bg::after {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 157, 255, 0.12) 48%,
+    rgba(0, 157, 255, 0.25) 50%,
+    rgba(0, 157, 255, 0.12) 52%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 250% 250%;
+  background-position: 100% 75%;
+  opacity: 0.7;
+}
+
+/* Vệt cong bên trái - curved streak */
+.curved-streak-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 800px 350px at 0% 85%,
+    rgba(0, 157, 255, 0.35) 0%,
+    rgba(0, 157, 255, 0.25) 8%,
+    rgba(0, 157, 255, 0.15) 18%,
+    rgba(0, 157, 255, 0.08) 28%,
+    rgba(0, 157, 255, 0.03) 38%,
+    transparent 50%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 5%,
+    rgba(0, 0, 0, 0.4) 8%,
+    rgba(0, 0, 0, 0.7) 12%,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(0, 0, 0, 0.95) 22%,
+    rgba(0, 0, 0, 0.7) 28%,
+    rgba(0, 0, 0, 0.4) 32%,
+    rgba(0, 0, 0, 0.1) 38%,
+    transparent 45%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 5%,
+    rgba(0, 0, 0, 0.4) 8%,
+    rgba(0, 0, 0, 0.7) 12%,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(0, 0, 0, 0.95) 22%,
+    rgba(0, 0, 0, 0.7) 28%,
+    rgba(0, 0, 0, 0.4) 32%,
+    rgba(0, 0, 0, 0.1) 38%,
+    transparent 45%,
+    transparent 100%
+  );
 }

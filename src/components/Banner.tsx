@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import BannerLogo from "../assets/Banner-logo.svg";
+import BannerLogo from "../assets/images/banner-logo.svg";
 
 function Banner() {
   const containerVariants = {
@@ -38,7 +38,7 @@ function Banner() {
   };
 
   return (
-    <div className="border-y border-primary/40">
+    <div className="border-t border-primary/40">
       <div className="container mx-auto py-6">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -71,11 +71,11 @@ function Banner() {
               the same hyper-performant chain.
             </motion.p>
             <motion.div
-              className="flex gap-2 flex-wrap"
+              className="flex gap-4 flex-wrap"
               variants={itemVariants}
             >
               <motion.button
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium hover:bg-primary transition-colors cursor-pointer shadow-[0_0_10px_rgb(100,214,255)]"
+                className="flex items-center gap-1 px-4 py-2 rounded-lg bg-gradient-to-b from-[#2BB9F3] to-[#83D4FB] text-black font-medium hover:bg-gradient-to-b hover:from-primary hover:to-primary transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
