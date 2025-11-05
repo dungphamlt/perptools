@@ -56,7 +56,7 @@ function Section1() {
 
   return (
     <div
-      className="container mx-auto py-20 "
+      className="container mx-auto mt-20 pb-20 "
       style={{
         backgroundImage: `url(${Union})`,
         backgroundSize: "contain",
