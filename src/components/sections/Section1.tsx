@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import BgTrade from "../../assets/images/bg-trade.svg";
+import BannerSection1 from "../../assets/images/banner-section1.svg";
 import Union from "../../assets/images/Union.png";
 
 function Section1() {
@@ -56,7 +56,7 @@ function Section1() {
 
   return (
     <div
-      className="container mx-auto mt-20 pb-20 "
+      className="container mx-auto pt-20 pb-20 "
       style={{
         backgroundImage: `url(${Union})`,
         backgroundSize: "contain",
@@ -65,7 +65,7 @@ function Section1() {
       }}
     >
       <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         variants={numbersContainerVariants}
         initial="hidden"
         whileInView="visible"
@@ -85,19 +85,20 @@ function Section1() {
         ))}
       </motion.div>
       <motion.div
-        className="relative pt-[130px]"
+        className="relative pt-[150px]"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3, margin: "-100px" }}
       >
         <motion.div className="gradient-border" variants={imageVariants}>
-          <div className="gradient-border-inner">
+          <div className="gradient-border-inner relative">
             <motion.img
-              src={BgTrade}
+              src={BannerSection1}
               alt="BgTrade"
               className="w-full h-full object-cover rounded-2xl"
               variants={imageVariants}
             />
+            <div className="absolute bottom-0 left-0 right-0 h-4/5 bg-gradient-to-t from-black/90 to-transparent rounded-2xl pointer-events-none" />
           </div>
         </motion.div>
       </motion.div>
