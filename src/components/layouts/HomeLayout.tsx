@@ -1,15 +1,16 @@
 import type { ReactNode } from "react";
-import Header from "./Header";
-import Banner from "./Banner";
-import Footer from "./Footer";
-interface LayoutProps {
+import Header from "../Header";
+import Banner from "../Banner";
+import Footer from "../Footer";
+
+interface HomeLayoutProps {
   children: ReactNode;
 }
 
-function Layout({ children }: LayoutProps) {
+function HomeLayout({ children }: HomeLayoutProps) {
   return (
     <div className="min-h-screen bg-black">
-      {/* Content layer */}
+      {/* Content layer với Banner cho Home */}
       <div className="relative content-layer-bg">
         <div className="curved-streak-left"></div>
         <div className="relative z-10">
@@ -24,4 +25,4 @@ function Layout({ children }: LayoutProps) {
   );
 }
 
-export default Layout;
+export default HomeLayout;

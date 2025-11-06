@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import BannerLogo from "../assets/images/Banner-logo.svg";
-
+import { useNavigate } from "react-router-dom";
 function Banner() {
+  const navigate = useNavigate();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,7 +39,7 @@ function Banner() {
   };
 
   return (
-    <div className="border-t border-primary/40">
+    <div className="">
       <div className="container mx-auto py-6">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
@@ -83,11 +84,12 @@ function Banner() {
                 <ChevronRight className="w-6 h-6" />
               </motion.button>
               <motion.button
+                onClick={() => navigate("/nft-sale")}
                 className="px-4 py-2 rounded-lg text-white border-2 border-white hover:border-primary hover:text-primary font-medium transition-colors cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Start Building
+                NFT Sale
               </motion.button>
             </motion.div>
           </motion.div>

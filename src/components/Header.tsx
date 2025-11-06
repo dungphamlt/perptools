@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Logo from "../assets/icons/logo.svg?react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronRight, Menu, X } from "lucide-react";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = useLocation().pathname;
 
   const navItems = [
     {
@@ -26,7 +27,7 @@ function Header() {
   ];
 
   return (
-    <header className="relative">
+    <header className="relative border-b border-primary/40">
       <div className="container mx-auto px-4 py-4 md:py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -41,7 +42,11 @@ function Header() {
           <nav className="hidden md:flex items-center gap-6 px-6 py-2 rounded-lg bg-primary/10">
             {navItems.map((item) => (
               <Link key={item.href} to={item.href}>
-                <span className="text-white hover:text-primary transition-colors font-medium">
+                <span
+                  className={` hover:text-primary transition-colors font-medium ${
+                    pathname === item.href ? "text-primary" : "text-white"
+                  }`}
+                >
                   {item.label}
                 </span>
               </Link>
@@ -51,7 +56,9 @@ function Header() {
           {/* Desktop Launch App Button */}
           <div className="hidden md:flex items-center gap-2">
             <button className="flex items-center gap-1 px-4 py-2 rounded-lg bg-gradient-to-b from-[#2BB9F3] to-[#83D4FB] text-black font-medium hover:bg-gradient-to-b hover:from-primary hover:to-primary transition-all duration-300 cursor-pointer hover:scale-105">
-              <span>Launch App</span>
+              <span>
+                {pathname === "/nft-sale" ? "Connect Wallet" : "Launch App"}
+              </span>
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
