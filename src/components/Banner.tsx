@@ -40,43 +40,45 @@ function Banner() {
 
   return (
     <div className="">
-      <div className="container mx-auto py-6">
+      <div className="container mx-auto py-10 px-4 md:px-0 md:py-14">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div
-            className="flex flex-col justify-center gap-6"
+            className="flex flex-col justify-center gap-8"
             variants={itemVariants}
           >
             <div className="">
               <motion.h2
-                className="text-primary md:text-6xl text-4xl font-medium"
+                className="text-primary md:text-[52px] text-3xl font-medium mb-2"
                 variants={itemVariants}
               >
-                Decentralized
+                AI meets DeFi
               </motion.h2>
               <motion.h2
-                className="text-white md:text-6xl text-4xl font-medium"
+                className="text-white md:text-[52px] text-3xl font-medium"
                 variants={itemVariants}
               >
-                perpetual contracts
+                Perpetuals Reinvented
               </motion.h2>
             </div>
-            <motion.p className="text-gray-300 text-lg" variants={itemVariants}>
-              Crypto is fragmented today, but it doesn't need to be. For the
-              first time, build projects, create value, and exchange assets on
-              the same hyper-performant chain.
+            <motion.p
+              className="text-white text-base md:text-lg"
+              variants={itemVariants}
+            >
+              Trade smarter with autonomous agents, real on-chain transparency,
+              and CEX-grade performance — without giving up control
             </motion.p>
             <motion.div
-              className="flex gap-4 flex-wrap"
+              className="hidden md:flex gap-4 flex-wrap"
               variants={itemVariants}
             >
               <motion.button
-                className="flex items-center gap-1 px-4 py-2 rounded-lg bg-gradient-to-b from-[#2BB9F3] to-[#83D4FB] text-black font-medium hover:bg-gradient-to-b hover:from-primary hover:to-primary transition-all duration-300 cursor-pointer"
+                className="flex font-semibold items-center gap-1 px-4 py-2 rounded-md bg-gradient-to-b from-[#2BB9F3] to-[#83D4FB] text-black hover:bg-gradient-to-b hover:from-primary hover:to-primary transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -85,7 +87,7 @@ function Banner() {
               </motion.button>
               <motion.button
                 onClick={() => navigate("/nft-sale")}
-                className="px-4 py-2 rounded-lg text-white border-2 border-white hover:border-primary hover:text-primary font-medium transition-colors cursor-pointer"
+                className="px-8 py-2 font-semibold rounded-md bg-white text-black hover:bg-primary transition-colors cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -94,7 +96,7 @@ function Banner() {
             </motion.div>
           </motion.div>
           <motion.div
-            className="flex items-center justify-center"
+            className="flex items-center justify-center my-12 md:my-0"
             variants={imageVariants}
           >
             <motion.img
@@ -104,6 +106,27 @@ function Banner() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
+          </motion.div>
+          <motion.div
+            className="flex md:hidden justify-center gap-8"
+            variants={itemVariants}
+          >
+            <motion.button
+              className="flex font-semibold items-center gap-1 px-4 py-2 rounded-md bg-gradient-to-b from-[#2BB9F3] to-[#83D4FB] text-black hover:bg-gradient-to-b hover:from-primary hover:to-primary transition-all duration-300 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>Launch App</span>
+              <ChevronRight className="w-6 h-6" />
+            </motion.button>
+            <motion.button
+              onClick={() => navigate("/nft-sale")}
+              className="px-8 py-2 font-semibold rounded-md bg-white text-black hover:bg-primary transition-colors cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              NFT Sale
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Ai1 from "../../assets/icons/ai1.svg?react";
 import Ai2 from "../../assets/icons/ai2.svg?react";
 import AiAgentImage from "../../assets/images/ai-agents.svg";
+import AiAgentImageMobile from "../../assets/images/ai-agents-mobile.svg";
 
 function Section3() {
   const headerContainerVariants = {
@@ -78,7 +79,7 @@ function Section3() {
   ];
 
   return (
-    <div className="container mx-auto pb-20">
+    <div className="container mx-auto pb-20 px-4 md:px-0">
       <motion.div
         className="flex flex-col justify-center items-center gap-4 mb-12"
         variants={headerContainerVariants}
@@ -87,18 +88,28 @@ function Section3() {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2
-          className="text-5xl font-medium text-primary"
+          className="text-4xl md:text-5xl font-medium text-primary"
           variants={itemVariants}
         >
           AI Agent
         </motion.h2>
-        <motion.p className="text-gray-300 text-lg" variants={itemVariants}>
+        <motion.p
+          className="text-gray-300 text-base md:text-lg"
+          variants={itemVariants}
+        >
           Smart automation for smarter decisions
         </motion.p>
       </motion.div>
-      <div className="border border-primary/40 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className=" border-0 md:border border-primary/40 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="md:hidden px-4 pt-4 border border-primary/40 rounded-xl">
+          <motion.img
+            src={AiAgentImageMobile}
+            alt="AI Agent"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <motion.div
-          className="py-6 pl-8"
+          className="p-0 md:py-6  md:pl-8"
           variants={cardsContainerVariants}
           initial="hidden"
           whileInView="visible"
@@ -113,17 +124,19 @@ function Section3() {
                 variants={cardVariants}
                 transition={{ duration: 0.2 }}
               >
-                <IconComponent className="w-10 h-10" />
+                <IconComponent className="w-12 h-12" />
                 <h3 className="text-2xl font-medium text-primary my-4">
                   {card.title}
                 </h3>
-                <p className="text-gray-300 text-lg">{card.description}</p>
+                <p className="text-gray-300 text-base md:text-lg ">
+                  {card.description}
+                </p>
               </motion.div>
             );
           })}
         </motion.div>
         <motion.div
-          className="pt-7"
+          className="pt-7 hidden md:block"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}

@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
-import CrossChainIcon from "../../assets/icons/cross-chain.svg?react";
+import CexIcon from "../../assets/icons/cex.svg?react";
+import EcosystemIcon from "../../assets/icons/ecosystem.svg?react";
+import IntelligenceIcon from "../../assets/icons/intelligence.svg?react";
 import LiquidityIcon from "../../assets/icons/liquidity.svg?react";
-import ToolsIcon from "../../assets/icons/tools.svg?react";
-import EthIcon from "../../assets/icons/eth.svg?react";
 function Section4() {
   const products = [
     {
-      title: "Cross-chain trading",
-      icon: <CrossChainIcon />,
+      title: "CEX-grade speed, DeFi principles",
+      icon: <CexIcon />,
       description:
-        "No bridging or no switching, just pick a chain and place a trade.",
+        "Sub-200ms latency and instant execution — trade like a centralized exchange while staying fully on-chain, self-custodial, and transparent.",
     },
     {
-      title: "Unmatched liquidity",
+      title: "Collaborative ecosystem",
+      icon: <EcosystemIcon />,
+      description:
+        "Permissionless. Transparent. Community-owned. The next evolution of decentralized trading.",
+    },
+    {
+      title: "AI-powered intelligence",
+      icon: <IntelligenceIcon />,
+      description:
+        "Autonomous trading agents trained and validated by elite quant teams across the globe — bringing institutional precision to DeFi markets.",
+    },
+    {
+      title: "Unified <br/> liquidity",
       icon: <LiquidityIcon />,
       description:
-        "Access deep liquidity pooled across markets to support large, confident trades.",
-    },
-    {
-      title: "Advanced tools",
-      icon: <ToolsIcon />,
-      description:
-        "Use powerful tools like hidden orders — built for control, speed, and a competitive edge.",
-    },
-    {
-      title: "Confidence in every trade",
-      icon: <EthIcon />,
-      description:
-        "Whether you're new or a pro, enjoy a streamlined experience built for clarity and control.",
+        "Omnichain orderbook connecting liquidity across blockchains. No bridges. No friction. Just seamless execution.",
     },
   ];
 
@@ -78,51 +78,59 @@ function Section4() {
   return (
     <div className="pb-20">
       <motion.div
-        className="container mx-auto pb-12"
+        className="container mx-auto pb-12 px-4 md:px-0"
         variants={headerContainerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
           className="flex flex-col gap-4 justify-center items-center"
           variants={headerItemVariants}
         >
           <motion.h2
-            className="text-5xl font-medium text-primary text-center max-w-4xl"
+            className="text-4xl md:text-5xl font-medium text-primary text-center max-w-4xl"
             variants={headerItemVariants}
           >
             EMBARK ON YOUR DECENTRALIZED TRADING JOURNEY
           </motion.h2>
           <motion.p
-            className="text-gray-300 text-lg text-center"
+            className="text-gray-300 text-base md:text-lg text-center"
             variants={headerItemVariants}
           >
             Discover our growing range of Perpetual Contract markets
           </motion.p>
         </motion.div>
       </motion.div>
-      <div className="border-y border-primary/60">
-        <div className="container mx-auto">
+      <div className="border-y-0 md:border-y border-primary/40">
+        <div className="container mx-auto px-4 md:px-0">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-4"
             variants={productsContainerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             {products.map((product, index) => (
               <motion.div
                 key={product.title}
-                className={`flex flex-col gap-8 ${
-                  index < products.length - 1 ? "border-l" : "border-r border-l"
-                } border-primary/60 p-8`}
+                className={`flex flex-col gap-8 border-primary/40 px-4 py-6  md:p-8  ${
+                  index < products.length - 1
+                    ? "border md:border-b-0 md:border-l"
+                    : "border md:border-r md:border-l"
+                }`}
                 variants={productItemVariants}
               >
-                <div className="flex-1 flex flex-col gap-4 pb-12">
-                  <motion.div className="mt-4">{product.icon}</motion.div>
-                  <h3 className="text-3xl font-medium text-white pr-10">
-                    {product.title}
+                <div className="flex-1 flex flex-col gap-6 md:gap-4 pb-0 md:pb-12">
+                  <motion.div className="mt-0 md:mt-4">
+                    {product.icon}
+                  </motion.div>
+                  <h3
+                    className="text-xl md:text-2xl font-medium text-white hidden md:block"
+                    dangerouslySetInnerHTML={{ __html: product.title }}
+                  ></h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-white block md:hidden">
+                    {index === 3 ? "Unified liquidity" : product.title}
                   </h3>
                   <p className="text-gray-300">{product.description}</p>
                 </div>
